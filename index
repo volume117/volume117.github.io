@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Mike's Homepage</title>
+<meta name="description" content="Mike: portfolio, photos and links.">
+<meta name="theme-color" content="#0c110d">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Crect width='16' height='16' fill='%230c110d'/%3E%3Cpath d='M3 4l4 4-4 4' stroke='%23b6f2a4' stroke-width='2' fill='none'/%3E%3Crect x='8' y='11' width='5' height='2' fill='%23ffcc33'/%3E%3C/svg%3E">
+<style>
+/* One file. Terminal window + early-Geocities trim. Layout: one centered window, sticky nav, sections flow. */
+:root{
+  --bg:#07090b;--win:#0c110d;--fg:#b6f2a4;--dim:#5f8a57;--line:#24402a;
+  --link:#6fd3ff;--visited:#f58cf0;--hot:#ffcc33;
+  --mono:ui-monospace,"Cascadia Mono","SF Mono",Menlo,Consolas,"Liberation Mono","Courier New",monospace;
+  color-scheme:dark
+}
+*,*::before,*::after{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%;scroll-behavior:smooth;scroll-padding-top:3.5rem}
+body{margin:0;padding:1rem 16px 2rem;min-height:100vh;color:var(--fg);font:15px/1.55 var(--mono);
+  background:var(--bg) radial-gradient(1px 1px at 12px 18px,#fff8 50%,transparent 51%) 0 0/160px 160px;
+  background-image:radial-gradient(1px 1px at 12px 18px,#fff8 50%,transparent 51%),radial-gradient(1px 1px at 61px 77px,#9cf9 50%,transparent 51%),radial-gradient(1.5px 1.5px at 97px 31px,#ffd9 50%,transparent 51%),radial-gradient(1px 1px at 140px 120px,#fff6 50%,transparent 51%),radial-gradient(1px 1px at 33px 140px,#f8f7 50%,transparent 51%)}
+a{color:var(--link);text-underline-offset:2px}
+a:visited{color:var(--visited)}
+a:hover{background:var(--link);color:var(--win);text-decoration:none}
+:focus-visible{outline:2px dashed var(--hot);outline-offset:2px}
+::selection{background:var(--fg);color:var(--win)}
+img{max-width:100%;height:auto;display:block}
+.skip{position:absolute;left:-999px}.skip:focus{left:16px;top:8px;z-index:9;background:var(--hot);color:#000;padding:.25rem .5rem}
+
+.win{max-width:46rem;margin-inline:auto;background:var(--win);border:2px solid var(--fg);box-shadow:6px 6px 0 #000,0 0 40px #b6f2a41a;position:relative}
+.win::after{content:"";position:absolute;inset:0;pointer-events:none;background:repeating-linear-gradient(transparent 0 2px,#0003 2px 3px)}
+.bar{display:flex;justify-content:space-between;gap:1rem;background:var(--fg);color:var(--win);font-weight:700;padding:.2rem .6rem}
+nav{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;display:flex;flex-wrap:wrap;gap:.2rem 1rem;padding:.5rem .8rem;background:var(--win);border-bottom:1px dashed var(--line);font-size:1.05rem}
+nav a{text-decoration:none}
+nav a::before{content:"[";color:var(--dim)}nav a::after{content:"]";color:var(--dim)}
+.ticker{overflow:hidden;border-block:1px solid var(--line);background:#000;color:var(--hot);white-space:nowrap;font-size:.85rem;line-height:1.9}
+.ticker span{display:inline-block;padding-left:100%;animation:scroll 24s linear infinite}
+@keyframes scroll{to{transform:translateX(-100%)}}
+
+main{padding:1.1rem .9rem 1.5rem;display:grid;gap:2rem}
+section{min-width:0}
+h1,h2{font-weight:700;line-height:1.05;margin:0 0 .6rem;text-wrap:balance}
+h1{font-size:clamp(2rem,7vw,3rem);letter-spacing:-.02em;color:var(--hot);text-shadow:3px 3px 0 #a03fa0}
+h2{font-size:1.15rem}
+h2::before{content:"C:\\MIKE> ";color:var(--dim);font-weight:400}
+p{margin:0 0 .6rem;max-width:62ch}
+.dim{color:var(--dim)}
+.cursor{display:inline-block;width:.55em;height:.9em;background:var(--hot);margin-left:.15em;vertical-align:-.05em;animation:blink 1s steps(1) infinite}
+@keyframes blink{50%{opacity:0}}
+
+.work{list-style:none;margin:0;padding:0;border-top:1px dashed var(--line)}
+.work li{display:grid;grid-template-columns:4.5ch 1fr auto;gap:.1rem 1rem;align-items:baseline;padding:.5rem 0;border-bottom:1px dashed var(--line)}
+.work li>*{min-width:0}
+.work time,.work .tag{color:var(--dim);font-variant-numeric:tabular-nums}
+.work .tag{font-size:.85em}
+.work small{grid-column:2/-1;color:var(--dim)}
+.new{background:var(--visited);color:#000;font-size:.7rem;font-weight:700;padding:0 .25rem;margin-left:.4rem;vertical-align:.15em;animation:blink 1.2s steps(1) infinite}
+
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(8.5rem,100%),1fr));gap:4px;margin-top:.4rem}
+.grid a{display:block;aspect-ratio:1;max-width:100%;overflow:hidden;border:1px solid var(--line);background:#000}
+.grid a:hover{border-color:var(--hot);background:#000}
+.grid img{width:100%;height:100%;object-fit:cover}
+.ph{display:grid;place-items:center;height:100%;color:var(--dim);font-size:.8rem;background:repeating-linear-gradient(45deg,#0f1a11 0 8px,#0c110d 8px 16px)}
+
+.buttons{display:flex;flex-wrap:wrap;gap:.5rem;margin:0;padding:0;list-style:none}
+.b88{display:grid;place-items:center;width:88px;height:31px;font-size:.72rem;font-weight:700;letter-spacing:.04em;text-decoration:none;color:#fff!important;border:2px outset #ccc}
+.b88:hover{border-style:inset;filter:brightness(1.2)}
+.ig{background:linear-gradient(45deg,#f9a12e,#e1306c 55%,#833ab4)}.x{background:#000;border-color:#777}
+.yt{background:#c00}.gh{background:#222;border-color:#888}.li{background:#0a66c2}.mail{background:#2a6e2a}
+.handles{margin:.7rem 0 0;font-size:.9rem;display:grid;grid-template-columns:7ch 1fr;gap:.1rem .5rem}
+.handles dt{color:var(--dim)}.handles dd{margin:0;overflow-wrap:anywhere}
+
+.cmd{display:flex;gap:.5rem;align-items:center;border-top:1px dashed var(--line);padding-top:.8rem}
+.cmd label{color:var(--dim);white-space:nowrap}
+.cmd input{flex:1;min-width:0;background:transparent;border:0;color:var(--hot);font:inherit;caret-color:var(--hot)}
+.cmd input:focus{outline:none}
+.cmd:focus-within{box-shadow:inset 0 -1px 0 var(--hot)}
+#out{font-size:.85rem;color:var(--dim);min-height:1.4em;margin:.3rem 0 0}
+
+footer{display:flex;flex-wrap:wrap;justify-content:space-between;gap:.5rem 1rem;align-items:center;padding:.6rem .9rem;border-top:2px solid var(--fg);font-size:.78rem;color:var(--dim)}
+.counter{letter-spacing:.15em;background:#000;color:#f33;padding:.05rem .35rem;border:1px inset #555;font-variant-numeric:tabular-nums}
+
+dialog{max-width:min(92vw,60rem);padding:0;border:2px solid var(--fg);background:var(--win);color:var(--fg);box-shadow:6px 6px 0 #000}
+dialog::backdrop{background:#000c}
+dialog img{max-height:78vh;margin-inline:auto}
+dialog p{margin:0;padding:.5rem .7rem;font-size:.85rem;max-width:none}
+dialog form{display:flex;justify-content:space-between;align-items:center;gap:1rem;background:var(--fg);color:var(--win);font-weight:700;padding:.2rem .4rem}
+dialog button{font:inherit;background:var(--win);color:var(--fg);border:2px outset var(--fg);cursor:pointer;padding:0 .5rem}
+
+@media (prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important}html{scroll-behavior:auto}.ticker span{padding-left:0}}
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<div class="win">
+  <div class="bar"><span>MIKE.EXE</span><span aria-hidden="true">_ □ ×</span></div>
+  <nav aria-label="Sections">
+    <a href="#top">home</a><a href="#work">work</a><a href="#photos">photos</a><a href="#links">links</a>
+  </nav>
+  <div class="ticker" aria-hidden="true"><span>*** WELCOME TO MY HOMEPAGE *** NEW: PHOTOS SECTION IS UP *** NO GUESTBOOK, JUST DM ME *** THANKS FOR VISITING ***</span></div>
+
+  <main id="main">
+    <section id="top">
+      <h1>Hi, I'm Mike<span class="cursor" aria-hidden="true"></span></h1>
+      <p>I make things and put some of them here. Replace this line with one sentence about what you do.</p>
+      <p class="dim">Currently: open to projects · Los Angeles, CA</p>
+    </section>
+
+    <section id="work">
+      <h2>dir work</h2>
+      <ul class="work">
+        <!-- Example entries: edit or replace. One <li> per project. -->
+        <li><time datetime="2026">2026</time><span><a href="#">Project One</a><span class="new">NEW!</span></span><span class="tag">photo</span><small>One line about the project.</small></li>
+        <li><time datetime="2025">2025</time><a href="#">Project Two</a><span class="tag">design</span><small>One line about the project.</small></li>
+        <li><time datetime="2024">2024</time><a href="#">Project Three</a><span class="tag">web</span><small>One line about the project.</small></li>
+      </ul>
+    </section>
+
+    <section id="photos">
+      <h2>dir photos</h2>
+      <p class="dim"><!-- PHOTOS:COUNT -->Example tiles. Run build_photos.py to fill this from your Instagram export.<!-- /PHOTOS:COUNT --></p>
+      <div class="grid">
+<!-- PHOTOS:START -->
+<a><span class="ph">IMG_001</span></a>
+<a><span class="ph">IMG_002</span></a>
+<a><span class="ph">IMG_003</span></a>
+<a><span class="ph">IMG_004</span></a>
+<a><span class="ph">IMG_005</span></a>
+<a><span class="ph">IMG_006</span></a>
+<!-- PHOTOS:END -->
+      </div>
+    </section>
+
+    <section id="links">
+      <h2>type links.txt</h2>
+      <ul class="buttons">
+        <li><a class="b88 ig" href="https://instagram.com/yourhandle" rel="me noopener" target="_blank">INSTAGRAM</a></li>
+        <li><a class="b88 x" href="https://x.com/yourhandle" rel="me noopener" target="_blank">X</a></li>
+        <li><a class="b88 yt" href="https://youtube.com/@yourhandle" rel="me noopener" target="_blank">YOUTUBE</a></li>
+        <li><a class="b88 gh" href="https://github.com/yourhandle" rel="me noopener" target="_blank">GITHUB</a></li>
+        <li><a class="b88 li" href="https://linkedin.com/in/yourhandle" rel="me noopener" target="_blank">LINKEDIN</a></li>
+        <li><a class="b88 mail" href="mailto:you@example.com">E-MAIL ME</a></li>
+      </ul>
+      <dl class="handles">
+        <dt>insta</dt><dd>@yourhandle</dd>
+        <dt>email</dt><dd>you@example.com</dd>
+      </dl>
+    </section>
+
+    <section aria-label="Command prompt">
+      <form class="cmd" id="cmd" autocomplete="off">
+        <label for="q">C:\MIKE&gt;</label>
+        <input id="q" placeholder="type help" spellcheck="false" aria-describedby="out">
+      </form>
+      <p id="out" role="status"></p>
+    </section>
+  </main>
+
+  <footer>
+    <span>you are visitor <span class="counter">000417</span></span>
+    <span>best viewed in any browser · updated <time datetime="2026-10">10/2026</time></span>
+  </footer>
+</div>
+
+<dialog id="viewer" aria-label="Photo viewer">
+  <form method="dialog">
+    <span id="pos">1/1</span>
+    <span><button type="button" id="prev" aria-label="Previous photo">&lt;</button> <button type="button" id="next" aria-label="Next photo">&gt;</button> <button aria-label="Close">×</button></span>
+  </form>
+  <img alt="">
+  <p hidden=""></p>
+</dialog>
+
+<script>
+// Optional extras. Everything works without JS: nav is plain links, photos open as files.
+(function(){
+  var $=function(s){return document.querySelector(s)};
+  var ig="https://instagram.com/yourhandle";
+  var go={home:"#top",work:"#work",photos:"#photos",links:"#links",insta:ig,ig:ig};
+  $("#cmd").addEventListener("submit",function(e){
+    e.preventDefault();
+    var q=$("#q"),out=$("#out"),c=q.value.trim().toLowerCase().replace(/^(cd|open|goto)\s+/,"");
+    q.value="";
+    if(!c)return;
+    if(c=="help"||c=="?")out.textContent="commands: "+Object.keys(go).join(" ")+" dir cls";
+    else if(c=="cls"||c=="clear")out.textContent="";
+    else if(c=="dir"||c=="ls")out.textContent="WORK  PHOTOS  LINKS.TXT";
+    else if(go[c]){out.textContent="opening "+c+"...";go[c].charAt(0)=="#"?location.hash=go[c]:window.open(go[c],"_blank","noopener")}
+    else out.textContent="'"+c+"' is not recognized. type help";
+  });
+
+  var d=$("#viewer");
+  if(!d||typeof d.showModal!="function")return;
+  var links=[].slice.call(document.querySelectorAll(".grid a[href]")),i=0,img=d.querySelector("img"),cap=d.querySelector("p");
+  function show(n){
+    i=(n+links.length)%links.length;
+    var a=links[i],t=a.querySelector("img");
+    img.src=a.getAttribute("href");img.alt=t?t.alt:"";
+    cap.textContent=a.getAttribute("data-caption")||"";cap.hidden=!cap.textContent;
+    $("#pos").textContent=(i+1)+"/"+links.length;
+  }
+  links.forEach(function(a,n){a.addEventListener("click",function(e){e.preventDefault();show(n);if(!d.open)d.showModal()})});
+  $("#prev").onclick=function(){show(i-1)};$("#next").onclick=function(){show(i+1)};
+  d.addEventListener("keydown",function(e){if(e.key=="ArrowRight")show(i+1);if(e.key=="ArrowLeft")show(i-1)});
+  d.addEventListener("click",function(e){if(e.target===d)d.close()});
+})();
+</script>
+
+
+</body></html>
