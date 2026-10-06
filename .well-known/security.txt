@@ -1,0 +1,8 @@
+# Security contact for mtbz.app (RFC 9116)
+# Found a vulnerability? Please email the address below. Thanks!
+# 6adfb183a4a2c94a2f92dab5ade762a47889a5a1
+
+Contact: mailto:security@mtbz.app
+Expires: 2027-10-01T07:00:00.000Z
+Preferred-Languages: en
+Canonical: https://mtbz.app/.well-known/security.txt
