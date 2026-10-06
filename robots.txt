@@ -1,0 +1,100 @@
+# robots.txt for mtbz.app
+# Policy: US search engines and link previews welcome.
+# AI crawlers, SEO data crawlers and non-US search engines asked to stay out.
+# robots.txt is an honor system: reputable bots obey it, malicious ones ignore it.
+ 
+# ============ AI: model training & dataset building ============
+User-agent: GPTBot
+User-agent: ClaudeBot
+User-agent: Claude-Web
+User-agent: anthropic-ai
+User-agent: Google-Extended
+User-agent: GoogleOther
+User-agent: GoogleOther-Image
+User-agent: GoogleOther-Video
+User-agent: Google-CloudVertexBot
+User-agent: Applebot-Extended
+User-agent: CCBot
+User-agent: Meta-ExternalAgent
+User-agent: FacebookBot
+User-agent: Bytespider
+User-agent: TikTokSpider
+User-agent: Amazonbot
+User-agent: cohere-ai
+User-agent: cohere-training-data-crawler
+User-agent: AI2Bot
+User-agent: Ai2Bot-Dolma
+User-agent: Diffbot
+User-agent: ImagesiftBot
+User-agent: img2dataset
+User-agent: Timpibot
+User-agent: omgili
+User-agent: omgilibot
+User-agent: Webzio-Extended
+User-agent: PanguBot
+User-agent: Kangaroo Bot
+User-agent: FirecrawlAgent
+User-agent: Crawlspace
+User-agent: Sidetrade indexer bot
+User-agent: VelenPublicWebCrawler
+User-agent: ICC-Crawler
+User-agent: iaskspider/2.0
+User-agent: ChatGLM-Spider
+User-agent: Brightbot 1.0
+User-agent: QualifiedBot
+User-agent: Andibot
+User-agent: bigsur.ai
+User-agent: Novellum
+# ============ AI: search / answer engines / agents ============
+User-agent: OAI-SearchBot
+User-agent: ChatGPT-User
+User-agent: Operator
+User-agent: Claude-SearchBot
+User-agent: Claude-User
+User-agent: PerplexityBot
+User-agent: Perplexity-User
+User-agent: meta-externalfetcher
+User-agent: Gemini-Deep-Research
+User-agent: YouBot
+User-agent: MistralAI-User
+User-agent: DuckAssistBot
+User-agent: PhindBot
+User-agent: Devin
+# ============ SEO / marketing / data-broker crawlers ============
+User-agent: AhrefsBot
+User-agent: AhrefsSiteAudit
+User-agent: SemrushBot
+User-agent: SiteAuditBot
+User-agent: SplitSignalBot
+User-agent: MJ12bot
+User-agent: DotBot
+User-agent: rogerbot
+User-agent: BLEXBot
+User-agent: DataForSeoBot
+User-agent: serpstatbot
+User-agent: Barkrowler
+User-agent: SeekportBot
+User-agent: MegaIndex.ru
+User-agent: linkdexbot
+User-agent: ZoominfoBot
+# ============ Non-US search engines ============
+User-agent: YandexBot
+User-agent: YandexImages
+User-agent: Yandex
+User-agent: Baiduspider
+User-agent: PetalBot
+User-agent: Sogou web spider
+User-agent: 360Spider
+User-agent: SeznamBot
+User-agent: Yeti
+User-agent: Mail.RU_Bot
+User-agent: coccocbot-web
+User-agent: Qwantbot
+Disallow: /
+ 
+# ============ Everyone else ============
+# Allowed: Googlebot, Bingbot (also powers Yahoo/DuckDuckGo results), DuckDuckBot,
+# Applebot (Siri/Spotlight search), and link-preview bots for iMessage, Slack,
+# LinkedIn, Discord, WhatsApp, X; plus the Internet Archive, bc they're cool af.
+User-agent: *
+Allow: /
